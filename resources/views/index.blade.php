@@ -29,20 +29,21 @@
                 <th>counter</th>
             </tr>
             </thead>
+            <form action="/" id="counter" method="post">
+                @foreach ($articles as $article)
 
-            @foreach ($articles as $article)
-
-                <tr>
-                    <td>{{ $article->id }}</td>
-                    <td>{{ $article->name }}</td>
-                    <td>{{ $article->counter }}</td>
-                </tr>
-            @endforeach
-
+                    <tr>
+                        <td>{{ $article->id }}</td>
+                        <td>{{ $article->name }}</td>
+                        <td>Counter: {{ $article->counter }}
+                            <button type="button" class="btn btn-primary btn-sm" form="counter">+</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </form>
 
 
         </table>
-
 
 
     </div>
