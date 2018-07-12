@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -31,15 +29,19 @@
                 <th>counter</th>
             </tr>
             </thead>
-            <tr>
-                <td>1.</td>
-                <td>Томаты свежие</td>
-                <td>кг</td>
-            </tr>
+
+            @foreach ($articles as $article)
+
+                <tr>
+                    <td>{{ $article->id }}</td>
+                    <td>{{ $article->name }}</td>
+                    <td>{{ $article->counter }}</td>
+                </tr>
+            @endforeach
+
+
 
         </table>
-
-
 
 
 

@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/','UserController@index');
+Route::get('/','TaskController@getTasks');
+Route::post('/','TaskController@addCount');
 
 Route::view('/1','index');
