@@ -17,9 +17,9 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('counter');
-            $table->timestamps();
-            (new UsersTableSeeder()) ->run();
+            $table->timestamp('created_at')->useCurrent();
         });
+        (new UsersTableSeeder()) ->run();
     }
 
     /**
