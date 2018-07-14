@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Task;
+use App\Log;
 
 class TaskController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         $articles = Task::all();
         return view('index')->with('articles', $articles);
     }
@@ -28,7 +28,8 @@ class TaskController extends Controller
     }
 
     public function queue(){
-        return view('queue');
+        $articles = Log::all()->where('status', 0)->sortByDesc('created_at');
+        return view('queue')->with('articles', $articles);
     }
 
 }
