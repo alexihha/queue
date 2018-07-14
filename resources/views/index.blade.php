@@ -30,7 +30,7 @@
             </tr>
             </thead>
             <form method="post" action="{{url('counter')}}" enctype="multipart/form-data">
-                <input type="hidden" name="_method" value="PUT">
+                {{ method_field('PUT') }}
                 @csrf
                 @foreach ($articles as $article)
 
