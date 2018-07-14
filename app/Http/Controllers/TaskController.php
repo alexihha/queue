@@ -10,7 +10,8 @@ use App\Log;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $articles = Task::all();
         return view('index')->with('articles', $articles);
     }
@@ -27,18 +28,16 @@ class TaskController extends Controller
         return redirect('/');
     }
 
-    public function queue(){
+    public function queue()
+    {
         $articles = Log::all()->where('status', 0)->sortByDesc('created_at');
         return view('queue')->with('articles', $articles);
     }
 
+    public function job()
+    {
+        return view('job');
+    }
+
 }
 
-//Task::where('id', $id)->first()->increment('counter');
-
-
-//public function counter($id){
-//
-//    $article->update(['counter' => '1']);
-//    return redirect('/');
-//}

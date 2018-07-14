@@ -12,15 +12,12 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">L3</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}" >
+            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a class="nav-link" href="/">Счётчик</a>
             </li>
             <li class="nav-item {{ Request::is('queue') ? 'active' : '' }}">
@@ -28,7 +25,25 @@
             </li>
         </ul>
     </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#">L3</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('job') ? 'active' : '' }}" href="job">В работу</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+
+
+
 
 
 <div class="container">
