@@ -5,7 +5,7 @@
 
 
     <div class="row">
-        <h1>Счётчик</h1>
+        <h1>Очередь</h1>
     </div>
 
     <div class="row">
@@ -21,16 +21,7 @@
             </thead>
 
 
-            @foreach ($articles as $article)
 
-                <tr>
-                    <td>{{ $article->id }}</td>
-                    <td>{{ $article->name }}</td>
-                    <td>Counter: {{ $article->counter }}
-                        <a href="/{{ $article->id }}">+</a>
-                    </td>
-                </tr>
-            @endforeach
 
 
         </table>

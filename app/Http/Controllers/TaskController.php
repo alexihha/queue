@@ -26,6 +26,11 @@ class TaskController extends Controller
             );
         return redirect('/');
     }
+
+    public function queue(){
+        return view('queue');
+    }
+
 }
 
 //Task::where('id', $id)->first()->increment('counter');

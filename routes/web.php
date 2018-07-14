@@ -17,5 +17,7 @@
 
 Route::get('/', 'TaskController@index');
 
+Route::get('/queue', 'TaskController@queue');
+
 Route::get('/{id}', 'TaskController@counter');
 
