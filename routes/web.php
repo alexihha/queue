@@ -15,5 +15,6 @@
 //Route::post('/counter','TaskController@addCounter');
 
 
-Route::resource('/', 'TaskController');
+Route::get('/', 'TaskController@index');
 
+Route::get('/{id}', 'TaskController@counter');

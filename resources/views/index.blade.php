@@ -29,20 +29,18 @@
                 <th>counter</th>
             </tr>
             </thead>
-            <form method="post" action="{{url('counter')}}" enctype="multipart/form-data">
-                {{ method_field('PUT') }}
-                @csrf
-                @foreach ($articles as $article)
 
-                    <tr>
-                        <td>{{ $article->id }}</td>
-                        <td>{{ $article->name }}</td>
-                        <td>Counter: {{ $article->counter }}
-                            <button type="button" class="btn btn-primary btn-sm">+</button>
-                        </td>
-                    </tr>
-                @endforeach
-            </form>
+
+            @foreach ($articles as $article)
+
+                <tr>
+                    <td>{{ $article->id }}</td>
+                    <td>{{ $article->name }}</td>
+                    <td>Counter: {{ $article->counter }}
+                        <a href="/{{ $article->id }}">+</a>
+                    </td>
+                </tr>
+            @endforeach
 
 
         </table>
