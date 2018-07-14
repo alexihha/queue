@@ -18,3 +18,4 @@
 Route::get('/', 'TaskController@index');
 
 Route::get('/{id}', 'TaskController@counter');
+

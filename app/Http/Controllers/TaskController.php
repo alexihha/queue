@@ -17,11 +17,13 @@ class TaskController extends Controller
 
     public function counter($id)
     {
-
-
         DB::table('tasks')
             ->where('id', $id)
             ->increment('counter');
+        DB::table('logs')
+            ->insert(
+                ['task_id' => $id, 'status' => 0]
+            );
         return redirect('/');
     }
 }

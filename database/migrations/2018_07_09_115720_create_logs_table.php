@@ -17,7 +17,7 @@ class CreateLogsTable extends Migration
             $table->increments('id');
             $table->integer('task_id');
             $table->integer('status');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
