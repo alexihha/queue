@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/','TaskController@getTasks');
-Route::post('/','TaskController@addCount');
+//Route::get('/','TaskController@getTasks');
+//Route::post('/counter','TaskController@addCounter');
 
-Route::view('/1','index');
+
+Route::resource('/', 'TaskController');
