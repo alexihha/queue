@@ -36,7 +36,13 @@ class TaskController extends Controller
 
     public function job()
     {
-        return view('job');
+        return view('job', ['status' => 0]);
+    }
+
+    public function add_job()
+    {
+
+        return redirect('job', ['status' => 1]);
     }
 
 }

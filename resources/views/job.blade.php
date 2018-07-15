@@ -11,19 +11,19 @@
 
     <div class="row">
 
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
-            <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>counter</th>
-            </tr>
-            </thead>
+        <a href="add-job">Подтверждаю</a>
 
-        </table>
 
+        @if ($status = 1)
+            {{ $$status }}
+        @endif
+
+        @if ($status = 0)
+            {{ $$status }}
+        @endif
 
     </div>
 
 
 @endsection
+
