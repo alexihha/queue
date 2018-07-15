@@ -34,9 +34,9 @@ class TaskController extends Controller
         return view('queue')->with('articles', $articles);
     }
 
-    public function job()
+    public function add_job()
     {
-        return view('job');
+        return view('add_job');
     }
 
 }

@@ -21,4 +21,4 @@ Route::get('/queue', 'TaskController@queue');
 
 Route::get('/{id}', 'TaskController@counter');
 
-Route::get('/job', 'TaskController@tojob');
+Route::get('/job', 'TaskController@add_job');
