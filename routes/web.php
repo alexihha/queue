@@ -19,6 +19,7 @@ Route::get('/', 'TaskController@index');
 
 Route::get('/queue', 'TaskController@queue');
 
+Route::get('/job', 'TaskController@job');
+
 Route::get('/{id}', 'TaskController@counter');
 
-Route::get('/job', 'TaskController@add_job');

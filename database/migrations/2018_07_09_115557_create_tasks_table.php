@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration
             $table->integer('counter');
             $table->timestamp('created_at')->useCurrent();
         });
-        (new UsersTableSeeder()) ->run();
+        (new TasksTableSeeder()) ->run();
     }
 
     /**

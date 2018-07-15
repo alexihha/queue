@@ -14,9 +14,9 @@
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
             <tr>
+                <th>date</th>
                 <th>id</th>
-                <th>name</th>
-                <th>counter</th>
+                <th>status</th>
             </tr>
             </thead>
 

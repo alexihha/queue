@@ -5,11 +5,11 @@
 
 
     <div class="row">
-        <h1>Счётчик</h1>
+        <h1>Принять в работу</h1>
     </div>
 
-    <div class="row">
 
+    <div class="row">
 
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
@@ -19,9 +19,6 @@
                 <th>counter</th>
             </tr>
             </thead>
-
-
-
 
         </table>
 
