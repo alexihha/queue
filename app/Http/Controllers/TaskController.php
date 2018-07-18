@@ -23,7 +23,7 @@ class TaskController extends Controller
             ->increment('counter');
         DB::table('logs')
             ->insert(
-                ['task_id' => $id, 'status' => 0]
+                ['task_id' => $id]
             );
         return redirect('/');
     }

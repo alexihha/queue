@@ -20,7 +20,7 @@
 
             @endif
         </div>
-        <div class="row">gitor
+        <div class="row">
 
             @if (count($articles))
 
