@@ -35,7 +35,9 @@
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('job') ? 'active' : '' }}" href="job">В работу</a>
+                <form class="form-inline" action="add">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">В работу</button>
+                </form>
             </li>
         </ul>
     </div>

@@ -34,16 +34,17 @@ class TaskController extends Controller
         return view('queue')->with('articles', $articles);
     }
 
-    public function job()
+    public function add()
     {
-        return view('job', ['status' => 0]);
+        $query = DB::table('logs')->where('status', 0)->first();
+        if (!empty($query)) {
+            DB::update("update logs set status = 1 where id = $query->id");
+            $url = 'queue?id=' . $query->id;
+        }
+        else {
+            $url = 'queue';
+        }
+        return redirect($url);
     }
-
-    public function add_job()
-    {
-
-        return redirect('job', ['status' => 1]);
-    }
-
 }
 
