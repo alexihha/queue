@@ -12,7 +12,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $articles = Task::all();
+        $articles = DB::table('tasks')->get();
         return view('index')->with('articles', $articles);
     }
 
@@ -40,8 +40,7 @@ class TaskController extends Controller
         if (!empty($query)) {
             DB::update("update logs set status = 1 where id = $query->id");
             $url = 'queue?id=' . $query->id;
-        }
-        else {
+        } else {
             $url = 'queue';
         }
         return redirect($url);
