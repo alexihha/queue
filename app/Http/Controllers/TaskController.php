@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use App\Task;
-use App\Log;
 
 class TaskController extends Controller
 {
@@ -30,7 +28,13 @@ class TaskController extends Controller
 
     public function queue()
     {
-        $articles = Log::all()->where('status', 0)->sortByDesc('created_at');
+//        $articles = Log::all()->where('status', 0)->sortByDesc('created_at');
+
+        $articles = DB::table('logs')
+            ->where('status', 0)
+            ->get()
+            ->sortByDesc('created_at');
+
         return view('queue')->with('articles', $articles);
     }
 
@@ -38,7 +42,8 @@ class TaskController extends Controller
     {
         $query = DB::table('logs')->where('status', 0)->first();
         if (!empty($query)) {
-            DB::update("update logs set status = 1 where id = $query->id");
+//            DB::update("update logs set status = 1 where id = $query->id");
+            DB::table('logs')->where('id', $query->id)->update(['status'=> 1]);
             $url = 'queue?id=' . $query->id;
         } else {
             $url = 'queue';
